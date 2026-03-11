@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<mewhy-image1.jpg"UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Microgreens — Ute City Microgreens</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green-dark: #1a2e1a; --green-mid: #2d4a2d; --green-light: #4a7c4a;
+    --green-pale: #c8dbc8; --cream: #f5f0e8; --gold: #c9a84c; --text: #1a2e1a;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 80px;
+    background: linear-gradient(to bottom, rgba(26,46,26,0.97), transparent);
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--cream); letter-spacing: 0.05em; text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.7); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--cream); }
+  footer { background: var(--green-dark); padding: 40px 80px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(200,219,200,0.1); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--cream); }
+  .footer-logo span { color: var(--gold); }
+  footer p { font-size: 11px; font-weight: 300; letter-spacing: 0.1em; color: rgba(245,240,232,0.4); }
+  .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--green-light); margin-bottom: 24px; display: block; }
+  .btn-primary { background: var(--gold); color: var(--green-dark); padding: 14px 32px; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.3s ease; }
+  .btn-primary:hover { background: var(--cream); transform: translateY(-2px); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @media (max-width: 900px) {
+    nav { padding: 20px 28px; }
+    .nav-links { display: none; }
+    footer { flex-direction: column; gap: 12px; padding: 32px 28px; text-align: center; }
+  }
+
+
+  /* PAGE HERO */
+  .page-hero {
+    min-height: 65vh; background: var(--green-dark);
+    display: grid; grid-template-columns: 1fr 1fr;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(74,124,74,0.22) 0%, transparent 70%); pointer-events: none; }
+  .page-hero-text { display: flex; flex-direction: column; justify-content: center; padding: 140px 60px 80px 80px; position: relative; z-index: 2; }
+  .page-hero-text .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .page-hero-text h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 5vw, 76px); font-weight: 300; line-height: 1.05; color: var(--cream); opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .page-hero-text h1 em { font-style: italic; color: var(--green-pale); }
+  .page-hero-text p { font-size: 15px; font-weight: 300; line-height: 1.7; color: rgba(245,240,232,0.65); max-width: 380px; margin-top: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+  .page-hero-image { position: relative; overflow: hidden; opacity: 0; animation: fadeIn 1.2s ease forwards 0.3s; }
+  .page-hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: brightness(0.72) saturate(1.2); }
+  .page-hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--green-dark) 0%, transparent 30%); }
+
+  /* SCIENCE STRIP */
+  .science-intro { background: var(--cream); padding: 80px; max-width: 860px; margin: 0 auto; text-align: center; }
+  .science-intro h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 3vw, 46px); font-weight: 300; color: var(--green-dark); line-height: 1.2; margin-bottom: 24px; }
+  .science-intro h2 em { font-style: italic; }
+  .science-intro p { font-size: 16px; font-weight: 300; line-height: 1.9; color: rgba(26,46,26,0.7); margin-bottom: 14px; }
+
+  /* STAT BAND */
+  .stat-band { background: var(--green-dark); padding: 60px 80px; }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; max-width: 1100px; margin: 0 auto; }
+  .stat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(200,219,200,0.1); padding: 40px 32px; text-align: center; }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 10px; }
+  .stat-card h4 { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-pale); margin-bottom: 10px; }
+  .stat-card p { font-size: 13px; font-weight: 300; line-height: 1.7; color: rgba(245,240,232,0.5); }
+
+  /* VARIETIES */
+  .varieties { background: var(--cream); padding: 100px 80px; }
+  .varieties-header { margin-bottom: 60px; }
+  .varieties-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 3.5vw, 52px); font-weight: 300; color: var(--green-dark); line-height: 1.1; }
+  .varieties-header h2 em { font-style: italic; }
+  .varieties-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; }
+  .variety-card { border: 1px solid rgba(26,46,26,0.1); padding: 36px 32px; transition: border-color 0.3s, transform 0.3s; background: white; }
+  .variety-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .variety-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--green-dark); margin-bottom: 8px; }
+  .variety-flavor { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .variety-card p { font-size: 13px; font-weight: 300; line-height: 1.8; color: rgba(26,46,26,0.68); }
+
+  /* NUTRITION DEEP DIVE */
+  .nutrition { display: grid; grid-template-columns: 1fr 1fr; }
+  .nutrition-image { position: relative; overflow: hidden; min-height: 580px; }
+  .nutrition-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.15) brightness(0.85); transition: transform 6s ease; }
+  .nutrition-image:hover img { transform: scale(1.04); }
+  .nutrition-content { background: var(--green-mid); padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+  .nutrition-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 3vw, 46px); font-weight: 300; color: var(--cream); line-height: 1.15; margin-bottom: 28px; }
+  .nutrition-content h2 em { font-style: italic; color: var(--green-pale); }
+  .nutrition-content p { font-size: 14px; font-weight: 300; line-height: 1.9; color: rgba(245,240,232,0.7); margin-bottom: 16px; }
+  .nutrient-list { margin-top: 8px; display: flex; flex-direction: column; gap: 10px; }
+  .nutrient-item { display: flex; align-items: flex-start; gap: 14px; }
+  .nutrient-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 7px; flex-shrink: 0; }
+  .nutrient-item p { font-size: 13px; font-weight: 300; line-height: 1.7; color: rgba(245,240,232,0.68); margin: 0; }
+  .nutrient-item strong { color: var(--green-pale); font-weight: 500; }
+
+  /* CULINARY */
+  .culinary { background: var(--green-dark); padding: 100px 80px; }
+  .culinary-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .culinary-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 3vw, 48px); font-weight: 300; color: var(--cream); line-height: 1.15; margin-bottom: 28px; }
+  .culinary-content h2 em { font-style: italic; color: var(--green-pale); }
+  .culinary-content p { font-size: 14px; font-weight: 300; line-height: 1.9; color: rgba(245,240,232,0.68); margin-bottom: 16px; }
+  .culinary-image { position: relative; overflow: hidden; height: 460px; }
+  .culinary-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.82) saturate(1.2); transition: transform 6s ease; }
+  .culinary-image:hover img { transform: scale(1.04); }
+
+  /* CTA */
+  .cta-band { background: var(--green-mid); padding: 80px; text-align: center; }
+  .cta-band h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 3.5vw, 52px); font-weight: 300; color: var(--cream); margin-bottom: 16px; }
+  .cta-band h2 em { font-style: italic; color: var(--green-pale); }
+  .cta-band p { font-size: 15px; font-weight: 300; color: rgba(245,240,232,0.65); margin-bottom: 40px; }
+
+  @media (max-width: 900px) {
+    .page-hero, .nutrition, .culinary-inner { grid-template-columns: 1fr; }
+    .page-hero-text { padding: 120px 28px 60px; }
+    .page-hero-image { height: 280px; }
+    .science-intro { padding: 52px 28px; }
+    .stat-band { padding: 52px 28px; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .varieties { padding: 72px 28px; }
+    .varieties-grid { grid-template-columns: 1fr; }
+    .nutrition-image { min-height: 280px; }
+    .nutrition-content { padding: 52px 28px; }
+    .culinary { padding: 72px 28px; }
+    .culinary-image { height: 260px; }
+    .cta-band { padding: 60px 28px; }
+  }</style>
+  <style>
+/* HAMBURGER */
+.burger { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: none; border: none; cursor: pointer; padding: 0; z-index: 200; }
+.burger span { display: block; height: 2px; width: 100%; background: #f5f0e8; transition: all 0.35s ease; transform-origin: center; }
+.burger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #1a2e1a; z-index: 150; flex-direction: column; align-items: center; justify-content: center; }
+.mobile-menu.open { display: flex; }
+.mobile-menu ul { display: flex !important; flex-direction: column; align-items: center; gap: 48px; list-style: none; padding: 0; }
+.mobile-menu ul a { font-size: 13px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(245,240,232,0.8); text-decoration: none; }
+@media (max-width: 768px) { .burger { display: flex; } .nav-links { display: none !important; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Ute City <span>Microgreens</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="why.html">Why Microgreens</a></li>
+    <li><a href="science.html">Science</a></li>
+    <li><a href="order.html">Order</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-text">
+    <p class="eyebrow">The Science &amp; The Flavor</p>
+    <h1>Why<br><em>Microgreens</em><br>Matter.</h1>
+    <p>Small in size. Extraordinary in nutrition, flavor, and culinary impact. Here's everything you need to know.</p>
+  </div>
+  <div class="page-hero-image">
+    <img src="why-img1.jpg" alt="Sunflower microgreens" />
+  </div>
+</section>
+
+<div class="science-intro">
+  <span class="section-label" style="text-align:center;">The Basics</span>
+  <h2>What exactly <em>are</em> microgreens?</h2>
+  <p>Microgreens are the seedling stage of vegetables, herbs, and greens — harvested just 7 to 21 days after germination, right after the first true leaves emerge. This is the precise moment when a plant's nutritional content is at its absolute peak.</p>
+  <p>Unlike sprouts (which are germinated seeds eaten whole, root and all), microgreens are grown in a growing medium, harvested above the root line, and eaten as a green. They sit between a sprout and a baby green — and they're in a nutritional league of their own.</p>
+  <p>A landmark study published in the <em>Journal of Agricultural and Food Chemistry</em> found that microgreens contain up to <strong>40 times more vital nutrients</strong> than their mature counterparts. This isn't a marketing claim — it's peer-reviewed science.</p>
+</div>
+
+<div class="stat-band">
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-number">40×</div>
+      <h4>More Nutrients</h4>
+      <p>Than the same mature vegetable by weight — confirmed by USDA-backed research</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">7–21</div>
+      <h4>Days to Harvest</h4>
+      <p>The fastest farm-to-table cycle of any crop — freshness is built into the process</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">100+</div>
+      <h4>Varieties Possible</h4>
+      <p>From mild pea shoots to spicy radish — each with its own unique flavor profile</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">0</div>
+      <h4>Pesticides. Ever.</h4>
+      <p>Our entire operation uses only non-GMO organic seeds in a controlled environment</p>
+    </div>
+  </div>
+</div>
+
+<section class="varieties">
+  <div class="varieties-header">
+    <span class="section-label">What We Grow</span>
+    <h2>Our varieties &amp;<br><em>their flavor profiles.</em></h2>
+  </div>
+  <div class="varieties-grid">
+    <div class="variety-card">
+      <div class="variety-name">Pea Shoots</div>
+      <div class="variety-flavor">Sweet · Tender · Lush</div>
+      <p>Full, lush pea shoot tendrils — among the most beloved by chefs for their clean sweetness and satisfying texture. Exceptional source of vitamins A, C, and folate. Beautiful draped over fish, pasta, or spring vegetable dishes.</p>
+    </div>
+    <div class="variety-card">
+      <div class="variety-name">Sunflower</div>
+      <div class="variety-flavor">Nutty · Crunchy · Rich</div>
+      <p>One of the most beloved by chefs. Thick, juicy stems with a rich nutty flavor and satisfying crunch. Exceptional source of plant protein, healthy fats, and vitamin E. Beautiful on composed salads, grain bowls, and summer plates.</p>
+    </div>
+    <div class="variety-card">
+      <div class="variety-name">Radish — Three Varieties</div>
+      <div class="variety-flavor">Spicy · Bold · Each Unique</div>
+      <p><strong>Kaiware</strong> (Daikon) — delicate, clean crisp heat, classic Japanese daikon flavor. <strong>Rambo</strong> — vivid purple leaves, bold peppery punch, stunning garnish. <strong>China Rose</strong> — deep pink stems, spicy yet slightly sweet. All three are loaded with antioxidants and vitamin C.</p>
+    </div>
+    <div class="variety-card">
+      <div class="variety-name">Broccoli</div>
+      <div class="variety-flavor">Mild · Earthy · Versatile</div>
+      <p>The most nutritionally studied microgreen. Contains sulforaphane — a powerful compound studied for anti-cancer and anti-inflammatory properties. Mild enough for everything.</p>
+    </div>
+    <div class="variety-card">
+      <div class="variety-name">Beet — Tri-Color</div>
+      <div class="variety-flavor">Sweet · Earthy · Spectacular</div>
+      <p>Red, golden yellow, and green stems together — one of the most visually spectacular microgreens available. Sweet, earthy beet flavor. Rich in betalains, powerful anti-inflammatory pigments, plus folate and manganese.</p>
+    </div>
+    <div class="variety-card">
+      <div class="variety-name">Amaranth</div>
+      <div class="variety-flavor">Earthy · Vivid · Delicate</div>
+      <p>Brilliant magenta-pink stems with tender green leaves. Mildly earthy flavor with a beautiful sweetness. Extraordinarily high in vitamins K, C, and A, with one of the highest antioxidant profiles of any microgreen.</p>
+    </div>
+    <div class="variety-card">
+      <div class="variety-name">Swiss Chard</div>
+      <div class="variety-flavor">Earthy · Colorful · Mild</div>
+      <p>Stunning jewel-toned stems in red, yellow, and orange. Beautiful on the plate, earthy and mild on the palate. Rich in vitamins K, A, and C.</p>
+    </div>
+    <div class="variety-card">
+      <div class="variety-name">Micro Leeks</div>
+      <div class="variety-flavor">Onion · Subtle · Refined</div>
+      <p>A chef's secret weapon — all the sophistication of leek flavor in a delicate, elegant form. Outstanding on eggs, soups, and fine dining garnish work.</p>
+    </div>
+    <div class="variety-card">
+      <div class="variety-name">Spicy Salad Mix</div>
+      <div class="variety-flavor">Complex · Layered · Bold</div>
+      <p>Our certified proprietary blend: Broccoli Waltham 29, Kale White Russian, Arugula Slow Bolt, Kohlrabi Purple Vienna, Cabbage Golden Acre, and Mizuna Lime Streaks. Six varieties — a full spectrum of flavor, color, and nutrition.</p>
+    </div>
+    <div class="variety-card">
+      <div class="variety-name">Nasturtium</div>
+      <div class="variety-flavor">Peppery · Floral · Complex</div>
+      <p>Bright, peppery flavor with floral undertones. Stunning visual presence on any plate. One of the most exciting microgreens for adventurous cooking.</p>
+    </div>
+    <div class="variety-card">
+      <div class="variety-name">Cilantro</div>
+      <div class="variety-flavor">Bright · Herbal · Intense</div>
+      <p>Pure, concentrated cilantro flavor — more intense than the mature herb. A game-changer for Mexican, Thai, and modern cuisine. Rich in vitamins A and K.</p>
+    </div>
+    <div class="variety-card" style="border: 2px solid var(--gold); position:relative;">
+      <div style="position:absolute;top:16px;right:16px;background:var(--gold);color:var(--green-dark);font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:4px 10px;">Special Order</div>
+      <div class="variety-name">Yellow Peas</div>
+      <div class="variety-flavor">Sweet · Delicate · Rare</div>
+      <p>A special order item grown on request. Pale golden color, softer texture, and exceptional sweetness. Elegant on the plate. Contact us to arrange availability.</p>
+    </div>
+  </div>
+</section>
+
+<section class="nutrition">
+  <div class="nutrition-image">
+    <img src="why-img2.jpg" alt="Lush pea shoot microgreens" />
+  </div>
+  <div class="nutrition-content">
+    <span class="section-label" style="color:var(--gold);">The Nutrition Science</span>
+    <h2>What's actually<br><em>inside these tiny leaves.</em></h2>
+    <p>The reason microgreens are so nutrient-dense is biological. In the first days of a plant's life, it mobilizes all the energy and nutrients stored in its seed to fuel rapid growth. This is when concentration is highest — before nutrients get distributed across a full-grown plant.</p>
+    <p>What this means for you:</p>
+    <div class="nutrient-list">
+      <div class="nutrient-item"><div class="nutrient-dot"></div><p><strong>Vitamin C</strong> — Immune support, collagen synthesis, powerful antioxidant. Found in very high concentrations in red cabbage, broccoli, and radish microgreens.</p></div>
+      <div class="nutrient-item"><div class="nutrient-dot"></div><p><strong>Vitamin K</strong> — Critical for bone health and blood clotting. Microgreens like amaranth and chard contain extraordinary amounts.</p></div>
+      <div class="nutrient-item"><div class="nutrient-dot"></div><p><strong>Vitamin E</strong> — A fat-soluble antioxidant that protects cells from oxidative damage. Sunflower microgreens are particularly rich sources.</p></div>
+      <div class="nutrient-item"><div class="nutrient-dot"></div><p><strong>Sulforaphane</strong> — Found in broccoli microgreens, this compound is one of the most studied natural anti-cancer agents known to science.</p></div>
+      <div class="nutrient-item"><div class="nutrient-dot"></div><p><strong>Polyphenols &amp; Antioxidants</strong> — Fight inflammation, support cardiovascular health, and slow cellular aging. Present across all microgreen varieties.</p></div>
+      <div class="nutrient-item"><div class="nutrient-dot"></div><p><strong>Beta-Carotene</strong> — Converts to vitamin A in the body. Supports vision, skin health, and immunity. Abundant in sunflower and pea shoot microgreens.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="culinary">
+  <div class="culinary-inner">
+    <div class="culinary-content">
+      <span class="section-label" style="color:var(--gold);">In The Kitchen</span>
+      <h2>The chef's<br><em>perspective.</em></h2>
+      <p>Ute City Microgreens was born from a deep belief in the power of food as medicine. The starting point was always nutrition — growing the most nutrient-dense food possible and getting it to people at the peak of its potency.</p>
+      <p>What became clear quickly is that extraordinary nutrition and extraordinary flavor are the same thing. A microgreen harvested at peak nutrition is also a microgreen at peak flavor. The two are inseparable.</p>
+      <p>A well-chosen microgreen doesn't just garnish a dish — it completes it. The right variety adds a dimension of flavor, a contrast of texture, and a visual elegance that mature greens simply cannot replicate.</p>
+      <p>Pea shoots draped over a seared scallop. Micro radish cutting through the richness of a tartare. Tri-color beet stems bringing color and sweetness to a composed plate. These aren't decorations — they're nutrition you can taste.</p>
+    </div>
+    <div class="culinary-image">
+      <img src="why-img3.jpg" alt="Grow room rack with bands of colorful microgreens" />
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <span class="section-label" style="color:var(--gold);text-align:center;">Ready to Order?</span>
+  <h2>Experience the<br><em>difference freshness makes.</em></h2>
+  <p>Flexible delivery throughout the Roaring Fork Valley — twice weekly for restaurants, once weekly for households. Always cut fresh for every delivery.</p>
+  <a href="index.html#contact" class="btn-primary">Place an Order →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Ute City <span>Microgreens</span></div>
+  <p>Roaring Fork Valley, Colorado</p>
+  <p>© 2026 Ute City Microgreens</p>
+</footer>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var burger = document.createElement('button');
+  burger.className = 'burger';
+  burger.innerHTML = '<span></span><span></span><span></span>';
+  var mobileMenu = document.createElement('div');
+  mobileMenu.className = 'mobile-menu';
+  var navLinks = document.querySelector('.nav-links');
+  if (navLinks) mobileMenu.appendChild(navLinks.cloneNode(true));
+  var nav = document.querySelector('nav');
+  if (nav) { nav.appendChild(burger); document.body.appendChild(mobileMenu); }
+  burger.addEventListener('click', function() {
+    mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+      burger.classList.remove('open');
+    });
+  });
+});
+</script>
+</body>
+</html>

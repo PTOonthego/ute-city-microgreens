@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Ute City Microgreens</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green-dark: #1a2e1a; --green-mid: #2d4a2d; --green-light: #4a7c4a;
+    --green-pale: #c8dbc8; --cream: #f5f0e8; --gold: #c9a84c; --text: #1a2e1a;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 80px;
+    background: linear-gradient(to bottom, rgba(26,46,26,0.97), rgba(26,46,26,0.0));
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--cream); letter-spacing: 0.05em; text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.7); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--cream); }
+  footer { background: var(--green-dark); padding: 40px 80px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(200,219,200,0.1); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--cream); }
+  .footer-logo span { color: var(--gold); }
+  footer p { font-size: 11px; font-weight: 300; letter-spacing: 0.1em; color: rgba(245,240,232,0.4); }
+  .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--green-light); margin-bottom: 24px; display: block; }
+  .btn-primary { background: var(--gold); color: var(--green-dark); padding: 14px 32px; font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.3s ease; }
+  .btn-primary:hover { background: var(--cream); transform: translateY(-2px); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @media (max-width: 900px) {
+    nav { padding: 20px 28px; }
+    .nav-links { display: none; }
+    footer { flex-direction: column; gap: 12px; padding: 32px 28px; text-align: center; }
+  }
+
+
+  /* PAGE HERO */
+  .page-hero {
+    min-height: 60vh; background: var(--green-dark);
+    display: grid; grid-template-columns: 1fr 1fr;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(74,124,74,0.2) 0%, transparent 70%); pointer-events: none; }
+  .page-hero-text {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 140px 60px 80px 80px; position: relative; z-index: 2;
+  }
+  .page-hero-text .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .page-hero-text h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 5vw, 76px); font-weight: 300; line-height: 1.05; color: var(--cream); opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .page-hero-text h1 em { font-style: italic; color: var(--green-pale); }
+  .page-hero-image { position: relative; overflow: hidden; opacity: 0; animation: fadeIn 1.2s ease forwards 0.3s; }
+  .page-hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: brightness(0.75) saturate(1.1); }
+  .page-hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--green-dark) 0%, transparent 30%); }
+
+  /* STORY SECTION */
+  .story { display: grid; grid-template-columns: 1fr 1.4fr; gap: 0; }
+  .story-image { position: relative; min-height: 560px; overflow: hidden; }
+  .story-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(1.1) brightness(0.88); transition: transform 6s ease; }
+  .story-image:hover img { transform: scale(1.03); }
+  .story-content { background: var(--cream); padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+  .story-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 3vw, 48px); font-weight: 300; line-height: 1.15; color: var(--green-dark); margin-bottom: 28px; }
+  .story-content h2 em { font-style: italic; }
+  .story-content p { font-size: 15px; font-weight: 300; line-height: 1.9; color: rgba(26,46,26,0.72); margin-bottom: 18px; }
+
+  /* VALUES STRIP */
+  .values { background: var(--green-mid); padding: 72px 80px; }
+  .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; max-width: 1100px; margin: 0 auto; }
+  .value-card { background: rgba(255,255,255,0.05); padding: 40px 32px; border: 1px solid rgba(200,219,200,0.12); text-align: center; }
+  .value-number { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 12px; }
+  .value-card h4 { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-pale); margin-bottom: 10px; }
+  .value-card p { font-size: 13px; font-weight: 300; line-height: 1.7; color: rgba(245,240,232,0.55); }
+
+  /* GROW ROOM */
+  .grow { display: grid; grid-template-columns: 1.4fr 1fr; }
+  .grow-content { background: var(--green-dark); padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+  .grow-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 3vw, 48px); font-weight: 300; line-height: 1.15; color: var(--cream); margin-bottom: 28px; }
+  .grow-content h2 em { font-style: italic; color: var(--green-pale); }
+  .grow-content p { font-size: 15px; font-weight: 300; line-height: 1.9; color: rgba(245,240,232,0.68); margin-bottom: 18px; }
+  .grow-content a { margin-top: 16px; }
+  .grow-image { position: relative; overflow: hidden; min-height: 520px; }
+  .grow-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.82) saturate(1.15); transition: transform 6s ease; }
+  .grow-image:hover img { transform: scale(1.03); }
+
+  @media (max-width: 900px) {
+    .page-hero, .story, .grow { grid-template-columns: 1fr; }
+    .page-hero-text { padding: 120px 28px 60px; }
+    .page-hero-image { height: 280px; }
+    .story-image { min-height: 280px; }
+    .story-content, .grow-content { padding: 52px 28px; }
+    .values { padding: 52px 28px; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
+    .grow-image { min-height: 280px; order: -1; }
+  }</style>
+  <style>
+/* HAMBURGER */
+.burger { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: none; border: none; cursor: pointer; padding: 0; z-index: 200; }
+.burger span { display: block; height: 2px; width: 100%; background: #f5f0e8; transition: all 0.35s ease; transform-origin: center; }
+.burger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #1a2e1a; z-index: 150; flex-direction: column; align-items: center; justify-content: center; }
+.mobile-menu.open { display: flex; }
+.mobile-menu ul { display: flex !important; flex-direction: column; align-items: center; gap: 48px; list-style: none; padding: 0; }
+.mobile-menu ul a { font-size: 13px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(245,240,232,0.8); text-decoration: none; }
+@media (max-width: 768px) { .burger { display: flex; } .nav-links { display: none !important; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Ute City <span>Microgreens</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="why.html">Why Microgreens</a></li>
+    <li><a href="science.html">Science</a></li>
+    <li><a href="order.html">Order</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-text">
+    <p class="eyebrow">Our Story</p>
+    <h1>Rooted in the<br><em>Roaring Fork Valley.</em></h1>
+  </div>
+  <div class="page-hero-image">
+    <img src="about-img1.jpg" alt="Microgreens under grow lights" />
+  </div>
+</section>
+
+<section class="story">
+  <div class="story-image">
+    <img src="about-img2.jpg" alt="Non-GMO organic seed supply from True Leaf Market" />
+  </div>
+  <div class="story-content">
+    <span class="section-label">How It Began</span>
+    <h2>Born from a passion<br><em>for exceptional food.</em></h2>
+    <p>    <p>    <p>    <p>I started with one restaurant. That was it — one kitchen, one relationship, and a simple idea that what I was growing was worth sharing.</p>
+    <p>It grew from there, slowly and honestly. One restaurant became several. The grow room got bigger. Nothing fancy about it — just good product, delivered fresh every time.</p>
+    <p>Anyone who lives here knows that summer brings incredible farmers markets — but once the season ends, truly fresh local produce is just hard to find. I wanted to change that, at least for the people on my route.</p>
+    <p>I tried the store route for a while. It didn't sit right. By the time the product reached someone's hands, the store had doubled the price and the greens had lost half their life. That's not why I grow.</p>
+    <p>So this time I'm doing it differently — going straight to people's doors. Free delivery, once or twice a week, a curated mix of whatever is at its best. No middleman, no markup, just fresh greens the morning they're cut.</p>
+  </div>
+</section>
+
+<div class="values">
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-number">2×</div>
+      <h4>Weekly Deliveries</h4>
+      <p>Consistent supply throughout the Roaring Fork Valley</p>
+    </div>
+    <div class="value-card">
+      <div class="value-number">0</div>
+      <h4>Pesticides</h4>
+      <p>Always pesticide-free, always non-GMO organic seed</p>
+    </div>
+    <div class="value-card">
+      <div class="value-number">AM</div>
+      <h4>Harvest Time</h4>
+      <p>Cut within 24 hours of delivery — peak nutrition, peak flavor</p>
+    </div>
+    <div class="value-card">
+      <div class="value-number">∞</div>
+      <h4>Freshness</h4>
+      <p>No middlemen, no warehouses — straight from our grow room to you</p>
+    </div>
+  </div>
+</div>
+
+<section class="grow">
+  <div class="grow-content">
+    <span class="section-label" style="color:var(--gold);">The Grow Room</span>
+    <h2>Precision growing.<br><em>Every single tray.</em></h2>
+    <p>Our grow room is a controlled environment built entirely around one goal: producing the most flavorful, most nutritious microgreens possible. Temperature, humidity, airflow, and light cycles are dialed in for each variety.</p>
+    <p>We use non-GMO organic seeds and grow on natural coconut coir medium with no synthetic additives. Every tray is monitored daily and harvested at the exact peak of nutritional density and flavor development.</p>
+    <p>This isn't factory farming — it's craft growing. Small batches, personal attention, and a standard that we hold to the same level as any fine dining kitchen.</p>
+    <a href="why.html" class="btn-primary">Why Microgreens →</a>
+  </div>
+  <div class="grow-image">
+    <img src="about-img3.jpg" alt="Grow room with microgreens trays under lights" />
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Ute City <span>Microgreens</span></div>
+  <p>Roaring Fork Valley, Colorado</p>
+  <p>© 2026 Ute City Microgreens</p>
+</footer>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var burger = document.createElement('button');
+  burger.className = 'burger';
+  burger.innerHTML = '<span></span><span></span><span></span>';
+  var mobileMenu = document.createElement('div');
+  mobileMenu.className = 'mobile-menu';
+  var navLinks = document.querySelector('.nav-links');
+  if (navLinks) mobileMenu.appendChild(navLinks.cloneNode(true));
+  var nav = document.querySelector('nav');
+  if (nav) { nav.appendChild(burger); document.body.appendChild(mobileMenu); }
+  burger.addEventListener('click', function() {
+    mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+      burger.classList.remove('open');
+    });
+  });
+});
+</script>
+</body>
+</html>

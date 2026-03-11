@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ute City Microgreens — Roaring Fork Valley</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green-dark: #1a2e1a; --green-mid: #2d4a2d; --green-light: #4a7c4a;
+    --green-pale: #c8dbc8; --cream: #f5f0e8; --gold: #c9a84c; --silver: #8a9a8a;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--green-dark); overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 24px 80px; background: linear-gradient(to bottom, rgba(26,46,26,0.95), transparent); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--cream); letter-spacing: 0.05em; text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.7); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--cream); }
+
+  /* HERO */
+  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; background: var(--green-dark); }
+  .hero-text { display: flex; flex-direction: column; justify-content: center; padding: 120px 80px 80px; }
+  .hero-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 5.5vw, 80px); font-weight: 300; color: var(--cream); line-height: 1.05; margin-bottom: 24px; }
+  .hero h1 em { font-style: italic; color: var(--green-pale); }
+  .hero-subtitle { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(245,240,232,0.65); max-width: 420px; margin-bottom: 48px; }
+  .hero-cta { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: var(--green-dark); padding: 16px 36px; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; display: inline-block; }
+  .btn-primary:hover { background: var(--cream); }
+  .btn-secondary { font-size: 12px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.6); text-decoration: none; border-bottom: 1px solid rgba(245,240,232,0.3); padding-bottom: 2px; transition: color 0.3s; }
+  .btn-secondary:hover { color: var(--cream); }
+  .hero-image { position: relative; overflow: hidden; }
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85) saturate(1.1); }
+
+  /* DELIVERY STRIP */
+  .delivery-strip { background: var(--green-mid); padding: 14px 80px; display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; border-top: 1px solid rgba(200,219,200,0.15); }
+  .delivery-strip p { font-size: 11px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,240,232,0.6); }
+  .delivery-strip span { color: var(--cream); }
+
+  /* ABOUT */
+  .about { display: grid; grid-template-columns: 1fr 1fr; min-height: 70vh; }
+  .about-image { overflow: hidden; }
+  .about-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9) saturate(1.05); }
+  .about-content { background: var(--cream); display: flex; flex-direction: column; justify-content: center; padding: 80px; }
+  .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--green-light); margin-bottom: 20px; display: block; }
+  .about-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 3.5vw, 52px); font-weight: 300; color: var(--green-dark); line-height: 1.1; margin-bottom: 28px; }
+  .about-content h2 em { font-style: italic; }
+  .about-content p { font-size: 14px; font-weight: 300; line-height: 1.9; color: rgba(26,46,26,0.7); margin-bottom: 16px; }
+  .about-content a { margin-top: 20px; align-self: flex-start; }
+
+  /* BENEFITS */
+  .benefits { background: var(--green-dark); padding: 100px 80px; }
+  .benefits-header { text-align: center; margin-bottom: 64px; }
+  .benefits-header .section-label { color: var(--gold); }
+  .benefits-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 3.5vw, 52px); font-weight: 300; color: var(--cream); }
+  .benefits-header h2 em { font-style: italic; color: var(--green-pale); }
+  .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 1100px; margin: 0 auto; }
+  .benefit-card { background: rgba(255,255,255,0.04); padding: 48px 40px; border: 1px solid rgba(200,219,200,0.08); }
+  .benefit-icon { font-size: 28px; margin-bottom: 20px; }
+  .benefit-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--cream); margin-bottom: 14px; }
+  .benefit-card p { font-size: 13px; font-weight: 300; line-height: 1.8; color: rgba(245,240,232,0.55); }
+  .benefits-link { text-align: center; margin-top: 48px; }
+  .benefits-link a { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-pale); text-decoration: none; border-bottom: 1px solid rgba(200,219,200,0.3); padding-bottom: 2px; }
+
+  /* FEEDBACK */
+  .feedback { background: var(--cream); padding: 100px 80px; }
+  .feedback-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+  .feedback-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 3.5vw, 52px); font-weight: 300; color: var(--green-dark); margin-bottom: 16px; line-height: 1.15; }
+  .feedback-inner h2 em { font-style: italic; }
+  .feedback-sub { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(26,46,26,0.65); margin-bottom: 48px; }
+  .feedback-form { text-align: left; display: flex; flex-direction: column; gap: 20px; }
+  .feedback-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-group label { font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(26,46,26,0.5); }
+  .form-group input, .form-group textarea { background: white; border: 1px solid rgba(26,46,26,0.12); padding: 14px 18px; font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 300; color: var(--green-dark); outline: none; transition: border-color 0.3s; }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .feedback-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+  .star-rating { display: flex; align-items: center; gap: 12px; }
+  .star-rating span { font-size: 12px; font-weight: 400; letter-spacing: 0.1em; color: rgba(26,46,26,0.6); }
+  .stars { display: flex; gap: 4px; }
+  .star { font-size: 28px; color: var(--green-pale); cursor: pointer; transition: color 0.2s; }
+  .star.active, .star:hover { color: var(--gold); }
+  .btn-submit { background: var(--gold); color: var(--green-dark); border: none; padding: 16px 40px; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+  .btn-submit:hover { background: var(--green-dark); color: var(--cream); }
+
+  /* CTA */
+  .cta { background: var(--green-mid); padding: 100px 80px; text-align: center; }
+  .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px,4vw,58px); font-weight: 300; color: var(--cream); line-height: 1.1; margin-bottom: 16px; }
+  .cta h2 em { font-style: italic; color: var(--green-pale); }
+  .cta p { font-size: 14px; font-weight: 300; color: rgba(245,240,232,0.6); max-width: 480px; margin: 0 auto 40px; line-height: 1.8; }
+  .cta-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 20px; }
+  .cta-buttons { display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap; }
+  .cta-buttons a:first-child { background: var(--gold); color: var(--green-dark); padding: 16px 40px; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; }
+  .cta-buttons a:last-child { color: rgba(245,240,232,0.5); font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(245,240,232,0.2); padding-bottom: 2px; }
+
+  /* FOOTER */
+  footer { background: var(--green-dark); padding: 40px 80px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(200,219,200,0.1); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--cream); }
+  .footer-logo span { color: var(--gold); }
+  footer p { font-size: 11px; font-weight: 300; letter-spacing: 0.1em; color: rgba(245,240,232,0.4); }
+
+  @media (max-width: 900px) {
+    nav { padding: 20px 28px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-text { padding: 120px 28px 60px; }
+    .hero-image { height: 300px; }
+    .delivery-strip { padding: 14px 28px; gap: 16px; }
+    .about { grid-template-columns: 1fr; }
+    .about-image { height: 300px; }
+    .about-content { padding: 52px 28px; }
+    .benefits { padding: 72px 28px; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .feedback { padding: 72px 28px; }
+    .feedback-row { grid-template-columns: 1fr; }
+    .feedback-footer { flex-direction: column; align-items: flex-start; }
+    .cta { padding: 72px 28px; }
+    footer { flex-direction: column; gap: 12px; padding: 32px 28px; text-align: center; }
+  }</style>
+  <style>
+/* HAMBURGER */
+.burger { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: none; border: none; cursor: pointer; padding: 0; z-index: 200; }
+.burger span { display: block; height: 2px; width: 100%; background: #f5f0e8; transition: all 0.35s ease; transform-origin: center; }
+.burger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #1a2e1a; z-index: 150; flex-direction: column; align-items: center; justify-content: center; }
+.mobile-menu.open { display: flex; }
+.mobile-menu ul { display: flex !important; flex-direction: column; align-items: center; gap: 48px; list-style: none; padding: 0; }
+.mobile-menu ul a { font-size: 13px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(245,240,232,0.8); text-decoration: none; }
+@media (max-width: 768px) { .burger { display: flex; } .nav-links { display: none !important; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Ute City <span>Microgreens</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="why.html">Why Microgreens</a></li>
+    <li><a href="science.html">Science</a></li>
+    <li><a href="order.html">Order</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Roaring Fork Valley · Est. 2020</p>
+    <h1>Farm-Fresh<br><em>Microgreens</em><br>Delivered.</h1>
+    <p class="hero-subtitle">Cut fresh for every delivery. Free home delivery throughout the Roaring Fork Valley — for households, restaurants, and chefs who care what goes on the plate.</p>
+    <div class="hero-cta">
+      <a href="order.html" class="btn-primary">Place an Order</a>
+      <a href="about.html" class="btn-secondary">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="index-img1.jpg" alt="Microgreens variety selection" />
+  </div>
+</section>
+
+<div class="delivery-strip">
+  <p>🌱 <span>Free Home</span> Delivery</p>
+  <p>✦</p>
+  <p><span>Cut Fresh</span> for Every Delivery</p>
+  <p>✦</p>
+  <p>Serving <span>Aspen · Basalt · Carbondale · Snowmass</span></p>
+</div>
+
+<section class="about" id="about">
+  <div class="about-image">
+    <img src="index-img2.jpg" alt="Nasturtium microgreens growing" />
+  </div>
+  <div class="about-content">
+    <span class="section-label">Our Story</span>
+    <h2>Grown with care.<br><em>Delivered with intention.</em></h2>
+    <p>I started with one restaurant and grew from there — slowly, honestly, one kitchen at a time. Today Ute City Microgreens supplies some of the finest tables in the Roaring Fork Valley, and for the first time, is bringing that same quality straight to your door.</p>
+    <p>Everything is grown pesticide-free from non-GMO organic seed, cut fresh for every delivery, and dropped at your door free of charge. No middleman, no markup, no produce that's been sitting in a truck for days.</p>
+    <p>This is food grown with intention — for people who care what goes on their plate.</p>
+    <a href="about.html" class="btn-secondary">Read the full story</a>
+  </div>
+</section>
+
+<section class="benefits" id="benefits">
+  <div class="benefits-header">
+    <span class="section-label">Why Microgreens</span>
+    <h2>Tiny leaves.<br><em>Extraordinary nutrition.</em></h2>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">⚡</div>
+      <h3>Nutrient Powerhouses</h3>
+      <p>Microgreens contain up to 40× more nutrients than mature vegetables — concentrated vitamins C, E, and K, plus a dense array of minerals in every bite.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🌿</div>
+      <h3>Antioxidant Rich</h3>
+      <p>Packed with polyphenols and antioxidants that support your immune system, reduce inflammation, and promote overall cellular health.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🍽️</div>
+      <h3>Chef's Secret Weapon</h3>
+      <p>Intense, complex flavors that elevate any dish. The reason Aspen's top restaurants have been using our microgreens since day one — they simply taste better.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🌱</div>
+      <h3>Sustainably Grown</h3>
+      <p>Pesticide-free, grown in a controlled environment with non-GMO organic seed and coconut coir medium — maximum nutrition, zero compromise.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">❤️</div>
+      <h3>Heart &amp; Gut Health</h3>
+      <p>Regular consumption supports cardiovascular health, improves digestion, and provides a natural energy boost without any additives or processing.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✨</div>
+      <h3>Peak Freshness, Always</h3>
+      <p>Cut fresh for every delivery. No cold chain deterioration, no lost nutrients — just living, vibrant greens at their absolute best.</p>
+    </div>
+  </div>
+  <div class="benefits-link">
+    <a href="why.html">Explore the science →</a>
+  </div>
+</section>
+
+<section class="feedback">
+  <div class="feedback-inner">
+    <h2>We'd love to hear<br><em>from you.</em></h2>
+    <p class="feedback-sub">Tried our microgreens? Share your experience — your feedback helps us grow.</p>
+    <div class="feedback-form">
+      <div class="feedback-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Jane Smith" />
+        </div>
+        <div class="form-group">
+          <label>Your Role</label>
+          <input type="text" placeholder="Home cook, Chef, etc." />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Your Feedback</label>
+        <textarea placeholder="Tell us about your experience..."></textarea>
+      </div>
+      <div class="feedback-footer">
+        <div class="star-rating">
+          <span>Rate your experience:</span>
+          <div class="stars">
+            <span class="star" onclick="setRating(1)">★</span>
+            <span class="star" onclick="setRating(2)">★</span>
+            <span class="star" onclick="setRating(3)">★</span>
+            <span class="star" onclick="setRating(4)">★</span>
+            <span class="star" onclick="setRating(5)">★</span>
+          </div>
+        </div>
+        <button class="btn-submit" onclick="submitFeedback()">Submit Feedback</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <span class="cta-eyebrow">Free Delivery · Roaring Fork Valley</span>
+  <h2>Ready to put these<br><em>on your table?</em></h2>
+  <p>Two packages. Serious nutrition. Cut fresh for every delivery.</p>
+  <div class="cta-buttons">
+    <a href="order.html">See Our Packages →</a>
+    <a href="science.html">The Science Behind It →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Ute City <span>Microgreens</span></div>
+  <p>Roaring Fork Valley, Colorado</p>
+  <p>© 2026 Ute City Microgreens</p>
+</footer>
+
+<script src="script.js"></script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var burger = document.createElement('button');
+  burger.className = 'burger';
+  burger.innerHTML = '<span></span><span></span><span></span>';
+  var mobileMenu = document.createElement('div');
+  mobileMenu.className = 'mobile-menu';
+  var navLinks = document.querySelector('.nav-links');
+  if (navLinks) mobileMenu.appendChild(navLinks.cloneNode(true));
+  var nav = document.querySelector('nav');
+  if (nav) { nav.appendChild(burger); document.body.appendChild(mobileMenu); }
+  burger.addEventListener('click', function() {
+    mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('open');
+      burger.classList.remove('open');
+    });
+  });
+});
+</script>
+</body>
+</html>
