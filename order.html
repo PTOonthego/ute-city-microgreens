@@ -162,6 +162,14 @@
 .mobile-menu ul a { font-size: 13px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(245,240,232,0.8); text-decoration: none; }
 @media (max-width: 768px) { .burger { display: flex; } .nav-links { display: none !important; } }
 </style>
+
+<script>
+function contactEmail() {
+  var u = 'utecitymicrogreens';
+  var d = 'protonmail.com';
+  window.location = 'mailto:' + u + '@' + d;
+}
+</script>
 </head>
 <body>
 
@@ -187,6 +195,12 @@
   </div>
 </section>
 
+
+<div style="background:#1a2e1a;border-top:1px solid rgba(201,168,76,0.3);border-bottom:1px solid rgba(201,168,76,0.3);padding:40px 20px;text-align:center;">
+  <p style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#f5f0e8;margin:0 0 8px 0;">Coming Soon.</p>
+  <p style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.6);margin:0 0 24px 0;">Join our grow room</p>
+  <a onclick="contactEmail()" href="#" style="background:#c9a84c;color:#1a2e1a;padding:14px 40px;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;display:inline-block;cursor:pointer;">Get in Touch</a>
+</div>
 <section class="packages">
   <div class="packages-intro">
     <span class="section-label">Our Offerings</span>
@@ -286,7 +300,7 @@
       <h2>Serious volume.<br><em>Same freshness.</em></h2>
       <p>Supplying restaurants and professional kitchens throughout the Roaring Fork Valley. Custom quantities, custom varieties, reliable delivery. Let's talk.</p>
     </div>
-    <a href="mailto:utecitymicrogreens@protonmail.com">Get in Touch →</a>
+    <a href="#" onclick="contactEmail()">GET IN TOUCH →</a>
   </div>
 </div>
 

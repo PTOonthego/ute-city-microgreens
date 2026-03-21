@@ -140,6 +140,14 @@
 .mobile-menu ul a { font-size: 13px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(245,240,232,0.8); text-decoration: none; }
 @media (max-width: 768px) { .burger { display: flex; } .nav-links { display: none !important; } }
 </style>
+
+<script>
+function contactEmail() {
+  var u = 'utecitymicrogreens';
+  var d = 'protonmail.com';
+  window.location = 'mailto:' + u + '@' + d;
+}
+</script>
 </head>
 <body>
 
@@ -308,7 +316,7 @@
   <span class="section-label" style="color:var(--gold);text-align:center;">Ready to Order?</span>
   <h2>Experience the<br><em>difference freshness makes.</em></h2>
   <p>Flexible delivery throughout the Roaring Fork Valley — twice weekly for restaurants, once weekly for households. Always cut fresh for every delivery.</p>
-  <a href="mailto:utecitymicrogreens@protonmail.com" class="btn-primary">Place an Order →</a>
+  <a href="/cdn-cgi/l/email-protection#3f4a4b5a5c564b4652565c4d50584d5a5a514c7f4f4d504b5051525e5653115c5052" class="btn-primary">Place an Order →</a>
 </div>
 
 <footer>
@@ -316,7 +324,7 @@
   <p>Roaring Fork Valley, Colorado</p>
   <p>© 2026 Ute City Microgreens · PTO</p>
 </footer>
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener('DOMContentLoaded', function() {
   var burger = document.createElement('button');
   burger.className = 'burger';
@@ -332,12 +340,4 @@ document.addEventListener('DOMContentLoaded', function() {
     burger.classList.toggle('open');
   });
   mobileMenu.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      mobileMenu.classList.remove('open');
-      burger.classList.remove('open');
-    });
-  });
-});
-</script>
-</body>
-</html>
+    link.
