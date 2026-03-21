@@ -136,11 +136,14 @@
 @media (max-width: 768px) { .burger { display: flex; } .nav-links { display: none !important; } }
 </style>
 
+
+
 <script>
 function contactEmail() {
-  var u = 'utecitymicrogreens';
-  var d = 'protonmail.com';
-  window.location = 'mailto:' + u + '@' + d;
+  var a = 'utecitymicrogreens';
+  var b = 'proton';
+  var c = 'mail.com';
+  window.location = 'mai' + 'lto:' + a + '@' + b + c;
 }
 </script>
 </head>
@@ -266,7 +269,7 @@ function contactEmail() {
             <span class="star" onclick="setRating(5)">★</span>
           </div>
         </div>
-        <button class="btn-submit" onclick="submitFeedback()" onclick="window.location='mailto:utecitymicrogreens@protonmail.com?subject=Feedback'"">Submit Feedback</button>
+        <button class="btn-submit" onclick="submitFeedback()" onclick="contactEmail()"">Submit Feedback</button>
       </div>
     </div>
   </div>

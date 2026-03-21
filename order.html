@@ -163,11 +163,14 @@
 @media (max-width: 768px) { .burger { display: flex; } .nav-links { display: none !important; } }
 </style>
 
+
+
 <script>
 function contactEmail() {
-  var u = 'utecitymicrogreens';
-  var d = 'protonmail.com';
-  window.location = 'mailto:' + u + '@' + d;
+  var a = 'utecitymicrogreens';
+  var b = 'proton';
+  var c = 'mail.com';
+  window.location = 'mai' + 'lto:' + a + '@' + b + c;
 }
 </script>
 </head>
@@ -199,7 +202,13 @@ function contactEmail() {
 <div style="background:#1a2e1a;border-top:1px solid rgba(201,168,76,0.3);border-bottom:1px solid rgba(201,168,76,0.3);padding:40px 20px;text-align:center;">
   <p style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#f5f0e8;margin:0 0 8px 0;">Coming Soon.</p>
   <p style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.6);margin:0 0 24px 0;">Join our grow room</p>
-  <a onclick="contactEmail()" href="#" style="background:#c9a84c;color:#1a2e1a;padding:14px 40px;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;display:inline-block;cursor:pointer;">Get in Touch</a>
+  <a href="#" onclick="contactEmail();return false;">GET IN TOUCH →</a>
+</div>
+
+<div style="background:#1a2e1a;border-top:2px solid #c9a84c;border-bottom:2px solid #c9a84c;padding:48px 20px;text-align:center;">
+  <p style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:#f5f0e8;margin:0 0 10px 0;letter-spacing:0.05em;">Coming Soon.</p>
+  <p style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#c9a84c;margin:0 0 28px 0;">Join our grow room</p>
+  <a href="#" onclick="contactEmail();return false;" style="background:#c9a84c;color:#1a2e1a;padding:14px 40px;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;display:inline-block;">Get in Touch</a>
 </div>
 <section class="packages">
   <div class="packages-intro">
@@ -300,7 +309,7 @@ function contactEmail() {
       <h2>Serious volume.<br><em>Same freshness.</em></h2>
       <p>Supplying restaurants and professional kitchens throughout the Roaring Fork Valley. Custom quantities, custom varieties, reliable delivery. Let's talk.</p>
     </div>
-    <a href="#" onclick="contactEmail()">GET IN TOUCH →</a>
+    <a href="#" onclick="contactEmail();return false;">GET IN TOUCH →</a>
   </div>
 </div>
 
